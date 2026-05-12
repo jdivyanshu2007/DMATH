@@ -20,4 +20,13 @@ Matrix Matrix::operator+(const Matrix& obj) const{
 	}
 	return result;
 }
+Matrix Matrix::operator-(const Matrix& obj) const{
+	Matrix result(matrix);
+	for(int i = 0 ; i < matrix.size() ; i++){
+		for(int j = 0 ; j < matrix[i].size() ; j++){
+			result.matrix[i][j] = obj.matrix[i][j] - matrix[i][j];
+		}
+	}
+	return result;
+}
 }

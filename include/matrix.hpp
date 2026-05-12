@@ -12,6 +12,7 @@ public:
 	Matrix(const std::vector<std::vector<int>>& data);
 	void display() const;
 	Matrix operator+(const Matrix& obj) const;
+	Matrix operator-(const Matrix& obj) const;
 
 };
 
