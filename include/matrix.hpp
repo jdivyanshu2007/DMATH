@@ -13,7 +13,7 @@ public:
 	void display() const;
 	Matrix operator+(const Matrix& obj) const;
 	Matrix operator-(const Matrix& obj) const;
-
+	Matrix operator*(const Matrix& obj) const;
 };
 
 }
