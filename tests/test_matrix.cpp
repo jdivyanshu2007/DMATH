@@ -1,11 +1,9 @@
 #include "../include/matrix.hpp"
-using namespace DMATH;
-
 int main(){
-	const Matrix a({{2,3},{10,9}});
-	const Matrix b({{2,3},{10,9}});
-	Matrix c = a * b;
-	Matrix d = a * b;
+	const DMATH::Matrix a({{2,3},{10,9}});
+	const DMATH::Matrix b({{2,3},{10,9}});
+	DMATH::Matrix c = a * b;
+	DMATH::Matrix d = a * b;
 	c.display();
 	d.display();
 	return 0;

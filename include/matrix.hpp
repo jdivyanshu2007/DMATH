@@ -14,6 +14,7 @@ public:
 	Matrix operator+(const Matrix& obj) const;
 	Matrix operator-(const Matrix& obj) const;
 	Matrix operator*(const Matrix& obj) const;
+	int determinant() const;
 };
 
 }
