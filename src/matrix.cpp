@@ -1,4 +1,5 @@
 #include "../include/matrix.hpp"
+#include<iostream>
 namespace DMATH{
 Matrix::Matrix(const std::vector<std::vector<int>>& data){
 	matrix = data;
@@ -73,5 +74,10 @@ int Matrix::determinant() const{
 	}
 	return det;
 }
+std::ostream& operator << (std::ostream &out,const Matrix &m){
+	m.display();
+	return out;
 }
+}
+
 
