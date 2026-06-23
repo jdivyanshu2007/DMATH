@@ -1,4 +1,10 @@
 TESTS = determinant_test test_matrix
+ifeq ($(OS) , Windows_NT)
+	rm = del /Q
+else
+	rm = rm -f
+
+endif
 determinant_test: matrix.o determinant_test.o
 	g++ matrix.o determinant_test.o -Iinclude -o determinant_test
 test_matrix: matrix.o test_matrix.o 
@@ -10,4 +16,4 @@ test_matrix.o: ./tests/test_matrix.cpp
 determinant_test.o:./tests/determinant_test.cpp
 	g++ -c tests/determinant_test.cpp -Iinclude -o determinant_test.o
 clean:
-	rm *.o $(TESTS)
+	$(rm) *.o $(TESTS)
