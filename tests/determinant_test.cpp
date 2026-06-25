@@ -1,6 +1,6 @@
 #include "../include/matrix.hpp"
 int main(){
-	const DMATH::Matrix a({{1,2,3},{4,5,6},{7,8,9}});
+	const DMATH::Matrix<double> a({{1.09,2.90,3.99},{4.99,5.99,6.99},{7.56,8.34,9.24}});
 	std::cout<<a.determinant();
 	return 0;
 }

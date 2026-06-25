@@ -1,21 +1,27 @@
-ifeq ($(OS) , Windows_NT)
+ifeq ($(OS),Windows_NT)
 	RM = del /Q
 	EXE = .exe
 else
 	RM = rm -f
-	EXE = 
-
+	EXE =
 endif
+
+CXX = g++
+CXXFLAGS = -Iinclude
+
 TESTS = determinant_test$(EXE) test_matrix$(EXE)
-determinant_test: matrix.o determinant_test.o
-	g++ matrix.o determinant_test.o -Iinclude -o determinant_test
-test_matrix: matrix.o test_matrix.o 
-	g++ matrix.o test_matrix.o -Iinclude -o test_matrix
-matrix.o: ./src/matrix.cpp
-	g++ -c  src/matrix.cpp -Iinclude -o matrix.o 
-test_matrix.o: ./tests/test_matrix.cpp
-	g++ -c  tests/test_matrix.cpp -Iinclude -o test_matrix.o
-determinant_test.o:./tests/determinant_test.cpp
-	g++ -c tests/determinant_test.cpp -Iinclude -o determinant_test.o
+
+determinant_test:determinant_test.o
+	$(CXX) $(CXXFLAGS) determinant_test.o -o determinant_test
+test_matrix:test_matrix.o
+	$(CXX) $(CXXFLAGS) test_matrix.o -o test_matrix
+determinant_test.o: tests/determinant_test.cpp 
+	$(CXX) $(CXXFLAGS) -c tests/determinant_test.cpp -o determinant_test.o
+
+test_matrix.o: tests/test_matrix.cpp
+	$(CXX) $(CXXFLAGS) -c tests/test_matrix.cpp -o test_matrix.o
+
 clean:
 	$(RM) *.o $(TESTS)
+
+

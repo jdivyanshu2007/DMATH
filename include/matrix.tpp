@@ -1,6 +1,3 @@
-#include "../include/matrix.hpp"
-#include<iostream>
-#include<stdexcept>
 namespace DMATH{
 template<class T>
 Matrix<T>::Matrix(const std::vector<std::vector<T>>& data){
@@ -89,8 +86,8 @@ T Matrix<T>::determinant() const{
 	}
 	return det;
 }
-template <class T>
-std::ostream& operator << (std::ostream &out,const Matrix<T> &m){
+template <class U>
+std::ostream& operator << (std::ostream &out,const Matrix<U> &m){
 	m.display();
 	return out;
 }

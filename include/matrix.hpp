@@ -4,18 +4,22 @@
 #include<iostream>
 #include<vector>
 namespace DMATH{
+
+template <class T>
 class Matrix{
 private:
-	std::vector<std::vector<int>> matrix;
+	std::vector<std::vector<T>> matrix;
 public:
-	Matrix(const std::vector<std::vector<int>>& data);
+	Matrix(const std::vector<std::vector<T>>& data);
 	void display() const;
-	Matrix operator+(const Matrix& obj) const;
-	Matrix operator-(const Matrix& obj) const;
-	Matrix operator*(const Matrix& obj) const;
-	int determinant() const;
-	friend std::ostream& operator << (std::ostream &out ,const Matrix &m);
+	Matrix operator+(const Matrix<T>& obj) const;
+	Matrix operator-(const Matrix<T>& obj) const;
+	Matrix operator*(const Matrix<T>& obj) const;
+	T determinant() const;
+	template<class U>
+	friend std::ostream& operator << (std::ostream &out ,const Matrix<T> &m);
 };
 
 }
+#include "matrix.tpp"
 #endif
