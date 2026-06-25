@@ -3,17 +3,15 @@
 #include<stdexcept>
 namespace DMATH{
 Matrix::Matrix(const std::vector<std::vector<int>>& data){
-	try{
-		for(std::vector<int> i : data){
+		if(data.empty()){
+					throw std::invalid_argument("Matrix is Empty.");
+		}
+		for(const std::vector<int>& i : data){
 			if(i.size() != data[0].size()){
 					throw std::invalid_argument("Matrix dimensions are not consistent.");
 			}
 		}
 		matrix = data;
-	}
-	catch(const std::invalid_argument& e){
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
 }
 void Matrix::display() const{
 	for(int i = 0 ; i < matrix.size() ; i++){
