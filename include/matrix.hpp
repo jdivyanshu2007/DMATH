@@ -21,5 +21,8 @@ public:
 };
 
 }
-#include "matrix.tpp"
+#include "Matrix/algebra.tpp"
+#include "Matrix/io.tpp"
+#include "Matrix/arithmetic.tpp"
+#include "Matrix/constructor.tpp"
 #endif
