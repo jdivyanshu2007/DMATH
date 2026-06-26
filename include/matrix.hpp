@@ -11,6 +11,7 @@ private:
 	std::vector<std::vector<T>> matrix;
 public:
 	Matrix(const std::vector<std::vector<T>>& data);
+	Matrix(int row , int col);
 	void display() const;
 	Matrix operator+(const Matrix<T>& obj) const;
 	Matrix operator-(const Matrix<T>& obj) const;

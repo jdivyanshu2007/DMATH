@@ -11,4 +11,7 @@ Matrix<T>::Matrix(const std::vector<std::vector<T>>& data){
 		}
 		matrix = data;
 }
+template<class T>
+Matrix<T>::Matrix(int row , int col) : matrix(row , std::vector<T>(col)){
+}
 }
