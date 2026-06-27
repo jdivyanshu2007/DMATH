@@ -17,6 +17,7 @@ public:
 	Matrix operator-(const Matrix<T>& obj) const;
 	Matrix operator*(const Matrix<T>& obj) const;
 	T determinant() const;
+	Matrix transpose() const;
 	template<class U>
 	friend std::ostream& operator << (std::ostream &out ,const Matrix<T> &m);
 };
