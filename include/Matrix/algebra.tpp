@@ -33,8 +33,8 @@ T Matrix<T>::determinant() const{
 }
 template<class T>
 Matrix<T> Matrix<T>::transpose() const{
-		T row = matrix.size();
-		T col = matrix[0].size();
+		int row = matrix.size();
+		int col = matrix[0].size();
 		Matrix<T> result(col , row);
 		for(int i = 0 ; i < row ; i++){
 			for(int j = 0 ; j < col ; j++){
