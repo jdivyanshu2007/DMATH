@@ -7,12 +7,16 @@ else
 endif
 
 CXX = g++
-CXXFLAGS = -Iinclude
+CXXFLAGS = 	-std=c++17 -Iinclude -Ithird_party/googletest/googletest/include -Ithird_party/googletest/googletest
 
+
+
+GTEST_MAIN = third_party/googletest/googletest/src/gtest_main.cc
+GTEST_ALL =  third_party/googletest/googletest/src/gtest-all.cc
 TESTS = determinant_test$(EXE) test_matrix$(EXE) transpose_test$(EXE)
 
 determinant_test:determinant_test.o
-	$(CXX) $(CXXFLAGS) determinant_test.o -o determinant_test
+	$(CXX) $(CXXFLAGS) determinant_test.o $(GTEST_MAIN) $(GTEST_ALL) -o determinant_test
 test_matrix:test_matrix.o
 	$(CXX) $(CXXFLAGS) test_matrix.o -o test_matrix
 transpose_test:transpose_test.o
