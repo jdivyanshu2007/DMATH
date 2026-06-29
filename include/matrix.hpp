@@ -7,7 +7,7 @@ namespace DMATH{
 
 template <class T>
 class Matrix{
-private:
+protected:
 	std::vector<std::vector<T>> matrix;
 public:
 	Matrix(const std::vector<std::vector<T>>& data);
@@ -16,6 +16,7 @@ public:
 	Matrix operator+(const Matrix<T>& obj) const;
 	Matrix operator-(const Matrix<T>& obj) const;
 	Matrix operator*(const Matrix<T>& obj) const;
+	bool operator == (const Matrix<T>& obj) const;
 	T determinant() const;
 	Matrix transpose() const;
 	template<class U>
