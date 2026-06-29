@@ -48,15 +48,6 @@ Matrix<T> Matrix<T>::operator*(const Matrix<T>& obj) const{
 }
 template<class T>
 bool  Matrix<T>::operator==(const Matrix<T>& obj) const{
-	for(int i = 0 ; i < matrix.size() ; i++){
-		for(int j = 0 ; j < matrix[0].size() ; j++){
-			if(matrix[i][j] == obj.matrix[i][j]){
-					return true;
-			}else{
-					return false;
-			}
-		}
-	}
-	return false;
+		return matrix == obj.matrix;
 }
 }
