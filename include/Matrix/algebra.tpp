@@ -47,4 +47,22 @@ template<class T>
 bool Matrix<T>::isSymmetric() const{
 	return *this == this->transpose();
 }
+template<class T>
+bool Matrix<T>::isPositiveDefinite() const{
+	if(! this->isSymmetric()){
+		return false;
+	}
+	for(int k = 1 ; k <= matrix.size() ; k++){
+		Matrix<T> sub(k,k);
+		for(int i = 0 ; i < k ; i++){
+			for(int j = 0 ; j < k ; j++){
+					sub.matrix[i][j] = matrix[i][j]; 
+			}
+		}
+		if(sub.determinant() <= 0){
+				return false;
+		}
+	}
+	return true;
+}
 }

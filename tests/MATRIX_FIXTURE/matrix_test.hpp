@@ -14,7 +14,9 @@ class MatrixTest:public testing::Test{
     const DMATH::Matrix<int> A{{{1,2,3},{4,5,6},{7,8,9}}};
     const DMATH::Matrix<int> B{{{1,2,3},{4,5,6},{7,8,9}}};
     const DMATH::Matrix<int> C{{{2,4,6},{8,10,12},{14,16,18}}};
-    
+    const DMATH::Matrix<int> D{{{1,2},{2,1}}};//not positive definite
+    const DMATH::Matrix<int> E{{{1,4,7},{4,5,8},{7,8,9}}};//not positive definite
+    const DMATH::Matrix<int> F{{{4,1,1},{1,3,0},{1,0,2}}};//positive definite
 };
 
 #endif
