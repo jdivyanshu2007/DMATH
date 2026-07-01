@@ -16,7 +16,8 @@ GTEST_ALL =  third_party/googletest/googletest/src/gtest-all.cc
 OBJS  = main.o \
 		determinant_test.o \
 		transpose_test.o \
-		arithmetic_test.o
+		arithmetic_test.o \
+		symmetric_test.o
 TESTS: $(OBJS) 
 	$(CXX) $(CXXFLAGS) $(OBJS) $(GTEST_ALL) -o tests
 main.o: tests/main.cpp
@@ -27,5 +28,7 @@ arithmetic_test.o: tests/arithmetic_test.cpp
 	$(CXX) $(CXXFLAGS) -c tests/arithmetic_test.cpp -o arithmetic_test.o
 transpose_test.o:tests/transpose_test.cpp
 	$(CXX) $(CXXFLAGS) -c tests/transpose_test.cpp -o transpose_test.o
+symmetric_test.o: tests/symmetric_test.cpp
+	$(CXX) $(CXXFLAGS) -c tests/symmetric_test.cpp -o symmetric_test.o
 clean:
 	$(RM) *.o TESTS$(EXE)

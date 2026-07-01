@@ -17,6 +17,7 @@ public:
 	Matrix operator-(const Matrix<T>& obj) const;
 	Matrix operator*(const Matrix<T>& obj) const;
 	bool operator == (const Matrix<T>& obj) const;
+	bool isSymmetric() const;
 	T determinant() const;
 	Matrix transpose() const;
 	template<class U>

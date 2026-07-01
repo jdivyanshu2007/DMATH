@@ -43,4 +43,8 @@ Matrix<T> Matrix<T>::transpose() const{
 		}
 		return result;
 }
+template<class T>
+bool Matrix<T>::isSymmetric() const{
+	return *this == this->transpose();
+}
 }
